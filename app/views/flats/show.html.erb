@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <!-- Card for title and address -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= @flat.name %></h5>
+      <p class="card-text"><%= @flat.address %></p>
+    </div>
+  </div>
+
+  <!-- Card for description -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">A bit more about this flat...</h5>
+      <p class="card-text"><%= @flat.description %></p>
+    </div>
+  </div>
+
+  <!-- Card for details -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Details</h5>
+    <i class="fas fa-user"></i> <%= @flat.number_of_guests %>
+    <i class="fas fa-euro-sign"></i> <%= @flat.price_per_night %>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+    <%= link_to 'Back to Flats', flats_path, class: 'btn btn-primary' %>
+    <%= link_to 'Edit', edit_flat_path(@flat), class: 'btn btn-secondary' %>
+    <%= link_to 'Delete', flat_path(@flat), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>
